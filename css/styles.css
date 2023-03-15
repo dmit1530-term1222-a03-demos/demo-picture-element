@@ -1,14 +1,26 @@
-/* 
-    Variables 
-
-    We can store all sorts of values in CSS custom properties, including things that are a little long, things that aren't easy to remember, or things that we might want to change throughout our entire website later.
-
-    Remember to declare your variables in the :root of the document, else other elements may not be able to acces them (i.e. use the correct scope)!
-*/
+:root {
+    --black: #212121;
+    --red: #c0232a;
+    --box-shadow: 0 0 10px 0 rgb(33 33 33 / 15%);
+}
 
 /* Typography */
+body {
+    color: var(--black);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
 
-
+h2, h3 {
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
 /* Utility Classes */
 
 .flex {
@@ -23,13 +35,28 @@
     padding: 0.5rem;
 }
 
-/* Navigation */
+/** main **/
+.info {
+   max-width: 80ch;
+   text-align: center;
+   margin: auto;
+   padding: 2rem 0;
+}
 
+.card {
+    border-radius: 0.3125rem;
+    box-shadow: var(--box-shadow);
+    margin: 1rem 0.5rem;
+}
 
-/* Main Content */
+.card picture,
+.card source,
+.card img {
+    max-width: 100%;
+    border-radius: 0.3125rem 0.3125rem 0 0; 
+}
 
-
-/* Footer */
+.card-body { padding: 1rem; }
 
 
 /* Media Query */
@@ -37,5 +64,19 @@
     .wide-flex {
         align-items: center;
         display: flex;
+    }
+
+    .card,
+    .card source,
+    .card img {
+        max-height: 12rem;
+    }
+
+    .card-body {
+        flex: 2;
+    }
+    .card source,
+    .card img {
+        border-radius: 0.3125rem 0 0 0.3125rem;
     }
 }
